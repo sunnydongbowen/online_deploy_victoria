@@ -13,10 +13,10 @@
 ### 1、前提条件
 
 - 服务器存储，为了确保环境稳定性，尽可能三块硬盘，满足ceph3副本需要
-
 - 至少双网卡，且网卡名尽可能一致(服务器规格一致，网卡名一般是相同的)
 
 - 为保证云平台流畅运行，内存性能尽可能满足在20G以上
+- 服务器正常访问外网，yum源配置正确
 
 ### 2、设置域名解析和免密登录
 
@@ -73,11 +73,11 @@ python online_ceph_cc_deploynode.py
 
 ### 10、修改multinode和globals.yml文件
 
-  >  这两个文件很重要，要根据实际情况来改正确！multinode主要根据实际情况改主机名，节点分布情况，globals.yml主要改的是网卡，vip，以及嵌套环境的是qemu，物理环境是kvm等。
+这两个文件很重要，要根据实际情况来改正确！multinode主要根据实际情况改主机名，节点分布情况，globals.yml主要改的是卡vip，以及嵌套环境的是qemu，物理环境是kvm等。
 
 ### 11、执行pull和deploy命令
 
-部署节点执行[基于kolla-ansible的openstack安装部署](https://github.com/sunnydongbowen/online_deploy_victoria/blob/master/%E5%A4%9A%E8%8A%82%E7%82%B9%E5%9F%BA%E4%BA%8Ekolla-ansible%E7%9A%84openstack%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%20.md)执行上面文档的1.14 -1.18即可，详细的见参考文档。中间会可能会遇到报错，根据实际情况解决。
+部署节点执行[基于kolla-ansible的openstack安装部署](https://github.com/sunnydongbowen/online_deploy_victoria/blob/master/%E5%A4%9A%E8%8A%82%E7%82%B9%E5%9F%BA%E4%BA%8Ekolla-ansible%E7%9A%84openstack%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%20.md)的1.14 -1.18章节，中间会可能会遇到报错，根据实际情况解决。
 
 ### 12、解决热迁移失败问题
 
@@ -86,6 +86,6 @@ python online_ceph_cc_deploynode.py
 ## 注意事项
 
 - 本项目不涉及机密，全都基于开源openstack及开源软件
-- 
-- 提高速度，也可以进行半在线安装，把openstack的镜像和ceph的镜像打包好，openstack.zip. 先提前导入即可，这样不需要花很多时间在pull镜像这一步了
+- 部署过程写的不够详细，但总体思路是对的，脚本也经过多次调试和修改，遇到问题还望多多思考解决
+- 为了提高速度，也可以进行半在线安装，把openstack的镜像和ceph的镜像打包好，openstack.zip. 先提前导入即可，这样不需要花很多时间在pull镜像这一步了(毕竟受网速限制，还有被墙的可能性)
 

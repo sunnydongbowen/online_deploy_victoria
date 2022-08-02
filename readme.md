@@ -43,7 +43,7 @@ python3 online_install_notdeploynode.py
 > 所有节点执行，会[ceph搭建](https://github.com/sunnydongbowen/online_deploy_victoria/blob/master/ceph%E6%90%AD%E5%BB%BA.md)能手动执行的执行完成，执行前需要把cephadm文件上传到所有节点的/root目录下！
 
 ```
-python online_ceph_install_allnode.py
+python3 online_ceph_install_allnode.py
 ```
 
 ### 6、修改登录密码
@@ -62,7 +62,7 @@ python online_ceph_install_allnode.py
 >
 
 ```
-python online_ceph_cc_deploynode.py
+python3 online_ceph_cc_deploynode.py
 ```
 
 ### 9、拷贝文件到其他节点
